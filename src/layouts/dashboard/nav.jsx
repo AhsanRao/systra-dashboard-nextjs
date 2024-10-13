@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
 import Avatar from '@mui/material/Avatar';
@@ -37,7 +36,7 @@ export default function Nav({ openNav, onCloseNav }) {
   }, [pathname]);
 
   const renderAccount = (
-    <Box
+    <Stack
       sx={{
         my: 3,
         mx: 2.5,
@@ -51,14 +50,14 @@ export default function Nav({ openNav, onCloseNav }) {
     >
       <Avatar src={account.photoURL} alt="photoURL" />
 
-      <Box sx={{ ml: 2 }}>
+      <Stack sx={{ ml: 2 }}>
         <Typography variant="subtitle2">{account.displayName}</Typography>
 
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           {account.role}
         </Typography>
-      </Box>
-    </Box>
+      </Stack>
+    </Stack>
   );
 
   const renderMenu = (
@@ -93,14 +92,14 @@ export default function Nav({ openNav, onCloseNav }) {
   );
 
   return (
-    <Box
+    <Stack
       sx={{
         flexShrink: { lg: 0 },
         width: { lg: NAV.WIDTH },
       }}
     >
       {upLg ? (
-        <Box
+        <Stack
           sx={{
             height: 1,
             position: 'fixed',
@@ -109,7 +108,7 @@ export default function Nav({ openNav, onCloseNav }) {
           }}
         >
           {renderContent}
-        </Box>
+        </Stack>
       ) : (
         <Drawer
           open={openNav}
@@ -123,7 +122,7 @@ export default function Nav({ openNav, onCloseNav }) {
           {renderContent}
         </Drawer>
       )}
-    </Box>
+    </Stack>
   );
 }
 
@@ -160,11 +159,11 @@ function NavItem({ item }) {
         }),
       }}
     >
-      <Box component="span" sx={{ width: 24, height: 24, mr: 2 }}>
+      <Stack component="span" sx={{ width: 24, height: 24, mr: 2 }}>
         {item.icon}
-      </Box>
+      </Stack>
 
-      <Box component="span">{item.title} </Box>
+      <Stack component="span">{item.title} </Stack>
     </ListItemButton>
   );
 }

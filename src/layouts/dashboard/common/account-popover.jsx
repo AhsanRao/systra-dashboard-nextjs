@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Popover from '@mui/material/Popover';
@@ -83,14 +83,14 @@ export default function AccountPopover() {
           },
         }}
       >
-        <Box sx={{ my: 1.5, px: 2 }}>
+        <Stack sx={{ my: 1.5, px: 2 }}>
           <Typography variant="subtitle2" noWrap>
             {account.displayName}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
             {account.email}
           </Typography>
-        </Box>
+        </Stack>
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 

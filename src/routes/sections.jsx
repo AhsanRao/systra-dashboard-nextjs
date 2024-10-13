@@ -9,7 +9,8 @@ export const WbsPage = lazy(() => import('src/pages/wbs'));
 export const LoginPage = lazy(() => import('src/pages/login'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 
-// export const ActivityList = lazy(() => import('src/pages/activityList'));
+export const ActivityPage = lazy(() => import('src/pages/activities'));
+
 // ----------------------------------------------------------------------
 
 export default function Router() {
@@ -26,7 +27,10 @@ export default function Router() {
         { element: <IndexPage />, index: true },
         { path: 'user', element: <UserPage /> },
         { path: 'wbs', element: <WbsPage /> },
+        
         // { path:"/activities/:wbsId", element: <ActivityList />} 
+        { path: 'activities/:wbsId', element: <ActivityPage /> },
+
       
       ],
     },

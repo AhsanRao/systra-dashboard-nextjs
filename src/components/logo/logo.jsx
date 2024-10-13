@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
-import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
@@ -21,7 +21,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   // OR using local (public folder)
   // -------------------------------------------------------
   // const logo = (
-  //   <Box
+  //   <Stack
   //     component="img"
   //     src="/logo/logo_single.svg" => your path
   //     sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
@@ -29,7 +29,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   // );
 
   const logo = (
-    <Box
+    <Stack
       ref={ref}
       component="div"
       sx={{
@@ -73,7 +73,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
           />
         </g>
       </svg>
-    </Box>
+    </Stack>
   );
 
   if (disabledLink) {
